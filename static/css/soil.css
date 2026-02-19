@@ -1,0 +1,44 @@
+body {
+    background: #f0f4f0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+}
+.upload-area {
+    border: 2px dashed #4CAF50;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.preview-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+.result-card {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 5px solid #4CAF50;
+    margin-top: 20px;
+}
+.result-card small {
+    color: #2e7d32;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.result-card h2 {
+    color: #1b5e20;
+    margin: 5px 0;
+}

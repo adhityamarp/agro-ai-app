@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soil Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/soil.css') }}">
+</head>
+<body>
+    <div class="box">
+        <a href="/" style="text-decoration:none; float:left;">⬅️ Home</a>
+        <h1>🌱 Soil Analysis</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if image %}
+            <div style="margin-top:20px;">
+                <img src="{{ url_for('static', filename='uploads/' + image) }}" style="width:100%; border-radius:15px; border: 2px solid #ddd;">
+            </div>
+        {% endif %}
+
+        {% if result %}
+            <div class="result-card" style="text-align: left; background: #f0fdf4; padding: 20px; border-radius: 12px; margin-top: 20px; border-left: 6px solid #22c55e;">
+                <h3 style="color: #166534; margin-bottom: 10px;">{{ result[0] }}</h3>
+                <p><strong>Recommended Crops:</strong> {{ result[1] }}</p>
+                <p><strong>Ideal Regions:</strong> {{ result[2] }}</p>
+                <hr style="margin: 10px 0; border: 0; border-top: 1px solid #dcfce7;">
+                <p style="font-size: 0.9em; color: #374151;">{{ result[3] }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

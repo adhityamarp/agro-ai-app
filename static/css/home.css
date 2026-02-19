@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.home-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 240px;
+    height: 320px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 70px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.2);
+}
+
+.icon {
+    font-size: 50px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.soil { background: linear-gradient(135deg, #4CAF50, #2E7D32); }
+.crop { background: linear-gradient(135deg, #66BB6A, #1B5E20); }
+.weather { background: linear-gradient(135deg, #42A5F5, #1565C0); }
+
+h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: 260px;
+    }
+}

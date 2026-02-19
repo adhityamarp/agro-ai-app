@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Disease</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/crop.css') }}">
+</head>
+<body>
+    <div class="box">
+        <a href="/" style="text-decoration:none; float:left;">⬅️ Home</a>
+        <h1>🍃 Crop Disease Detection</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Analyze Leaf</button>
+        </form>
+
+        {% if image %}
+            <div style="margin-top:20px;">
+                <img src="{{ url_for('static', filename='uploads/' + image) }}" style="width:100%; border-radius:15px; border: 2px solid #ddd;">
+            </div>
+        {% endif %}
+
+        {% if result %}
+            <div style="margin-top: 20px; padding: 15px; background: #fef2f2; border-radius: 10px; border: 1px solid #fee2e2;">
+                <h3 style="color: #991b1b;">Detected: {{ result }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

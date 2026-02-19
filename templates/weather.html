@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Farming Weather</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="input-panel">
+            <h1>🌦️ Smart Farming Weather App</h1>
+            <p>Weather-based crop recommendation system</p>
+            
+            <form method="POST" class="city-form">
+                <label class="input-tag">🏙️ Enter City Name</label>
+                <input type="text" name="city" placeholder="e.g. Srikakulam" required>
+                <button type="submit">🔍 Get Weather & Crops</button>
+            </form>
+        </div>
+
+        <div class="result-panel">
+            {% if result %}
+                <div class="data-card">
+                    <span class="label-tag pink">🌡️ Temperature</span>
+                    <div class="data-value">{{ result.temp }}</div>
+                </div>
+
+                <div class="data-card">
+                    <span class="label-tag blue">💧 Humidity</span>
+                    <div class="data-value">{{ result.humidity }}</div>
+                </div>
+
+                <div class="data-card">
+                    <span class="label-tag yellow">🌤️ Weather Condition</span>
+                    <div class="data-value">{{ result.condition }}</div>
+                </div>
+
+                <div class="data-card">
+                    <span class="label-tag green">🌱 Recommended Crops</span>
+                    <div class="data-value crops">{{ result.crops }}</div>
+                </div>
+            {% else %}
+                <p style="color:#888;">Enter a city to see the weather analysis.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
